@@ -1,0 +1,128 @@
+.testimonials {
+  padding: 1.25em 2.187em 7.5em;
+  text-align: center;
+}
+
+.testimonials h2 {
+  color: var(--clr-pri);
+  font-weight: 500;
+}
+
+.testimonials h3 {
+  margin-block-end: 1em;
+
+  @media (min-width: 48rem) {
+    margin-block-end: 2.66em;
+  }
+}
+
+.testimonials-wrap {
+  @media (min-width: 48rem) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+  }
+
+  @media (min-width: 65rem) {
+    text-align: left;
+  }
+}
+
+.testimonial {
+  position: relative;
+  isolation: isolate;
+  padding: 3.125em 0.937em;
+  transition: all 0.25s ease;
+
+  @media (min-width: 65rem) {
+    padding: 3.125em 4.375em 3.125em 1.875em;
+  }
+}
+
+.testimonial-wrap {
+  @media (min-width: 65rem) {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+  }
+}
+
+.testimonial:hover {
+  box-shadow: 0px 5px 40px rgba(0 0 0/0.1);
+}
+
+.testimonial-img {
+  margin-block-end: 1.25em;
+
+  @media (min-width: 65rem) {
+    flex: 1;
+  }
+}
+
+.testimonial-img img {
+  margin-inline: auto;
+}
+
+.testimonial-rating {
+  @media (min-width: 65rem) {
+    flex: 2;
+  }
+}
+
+.testimonial-rating h4 {
+  color: var(--clr-pri);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.25rem;
+  padding-block-end: 0.7em;
+  position: relative;
+
+  @media (min-width: 65rem) {
+    align-items: unset;
+  }
+}
+
+.testimonial-rating h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 2.2em;
+  height: 0.15em;
+  background: var(--linear-gradient-2);
+}
+
+.testimonial-rating .icons {
+  margin-block: 0.875em;
+}
+
+.testimonial-rating .fa-solid {
+  color: rgb(251, 176, 52);
+}
+
+.testimonial-rating .fa-regular {
+  color: var(--clr-sec);
+}
+
+.testimonial svg {
+  position: absolute;
+  right: 10px;
+  bottom: 20px;
+  z-index: -1;
+  width: 170px;
+  height: 140px;
+
+  @media (min-width: 65rem) {
+    right: 0;
+    bottom: 0;
+  }
+
+  path {
+    fill: rgb(247, 243, 243);
+    transition: 0.3s ease;
+  }
+}
+
+.testimonial:hover path {
+  fill: var(--clr-sec);
+}

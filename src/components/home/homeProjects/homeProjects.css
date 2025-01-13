@@ -1,0 +1,23 @@
+.home-projects {
+  position: relative;
+  isolation: isolate;
+}
+
+.home-projects::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  height: 500px;
+  background-color: var(--clr-pri);
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.home-projects :is(h2, h3) {
+  color: var(--clr-text-light);
+}
+
+.home-projects .port-button {
+  color: var(--clr-text-light);
+}

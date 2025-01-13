@@ -1,0 +1,64 @@
+.button-video {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--clr-sec);
+  border-radius: 100em;
+  border: none;
+  margin-block: 1em;
+  margin-inline: auto;
+  padding: 7px 15px 7px 20px;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.button-video .text {
+  color: var(--clr-pri);
+  font-weight: 600;
+  font-size: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.button-video:hover .text {
+  color: var(--clr-text-dark);
+}
+
+.button-video .icon {
+  color: var(--clr-pri);
+  background-color: var(--clr-bg-light);
+  border-radius: 50%;
+  padding: 15px;
+  margin-inline-start: 75px;
+  position: relative;
+  z-index: 2;
+  transition: 0.2s ease;
+}
+
+.button-video:hover .icon {
+  background-color: var(--clr-sec);
+}
+
+.button-video .overlay {
+  position: absolute;
+  width: 120%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0, 0);
+  transition: transform 0.5s ease;
+  /* isolation: isolate; */
+}
+
+.button-video:hover .overlay {
+  transform: translate(-50%, -50%) scale(1, 1);
+}
+
+.button-video .overlay::after {
+  content: '';
+  position: relative;
+  border-radius: 50%;
+  display: block;
+  padding-block-start: 100%;
+  background-color: var(--clr-bg-light);
+  z-index: -1;
+}

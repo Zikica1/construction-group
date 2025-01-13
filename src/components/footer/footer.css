@@ -1,0 +1,141 @@
+.footer {
+  color: var(--clr-pri);
+}
+
+.footer-top-wrap {
+  --grid-gap: 3em;
+
+  padding-inline: 1.56em;
+  padding-block: 5em;
+}
+
+.footer-social-networks p {
+  margin-block: 35px 1.25em;
+}
+
+.footer-icons-wrap {
+  display: flex;
+  gap: 1em;
+}
+
+.footer-icons-wrap li {
+  background-color: #e7eaf6;
+  width: 3em;
+  height: 2.81em;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  transition: 0.2s ease;
+}
+
+.footer-icons-wrap li:hover {
+  background-color: var(--clr-sec);
+}
+
+.footer-icons-wrap svg {
+  color: rgb(133, 161, 185);
+  transition: 0.2s ease;
+}
+
+.footer-icons-wrap li:hover svg {
+  color: var(--clr-pri);
+}
+
+.footer-top-wrap h4 {
+  color: var(--clr-text-dark);
+  font-size: 1.25rem;
+  margin-block-end: 2.8em;
+  padding-inline-start: 1em;
+  position: relative;
+}
+
+.footer-top-wrap h4::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 4px;
+  background-image: var(--linear-gradient-2);
+  width: 0.32em;
+  height: 1.1em;
+}
+
+.footer-links li,
+.footer-contact li {
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.85;
+  margin-block: 1.187em 0.625em;
+  padding-inline-start: 0.937em;
+  position: relative;
+}
+
+.footer-links li::before,
+.footer-contact li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  background-image: var(--linear-gradient-2);
+  width: 5px;
+  height: 5px;
+}
+
+.footer-newsletter p {
+  margin-block: 1.187em 2.6em;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+.footer-form-email {
+  background-color: rgb(231, 234, 246);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-form-email label {
+  position: absolute;
+  left: -1000px;
+}
+
+.footer-form-email input {
+  color: rgb(104, 104, 104);
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 100%;
+  font-weight: 500;
+  max-width: 80%;
+  padding: 1.125em 1.56em 1.31em;
+}
+
+.footer-form-email input::placeholder {
+  color: #85a1b9;
+}
+
+.footer-form-email button {
+  border: none;
+  background-color: var(--clr-sec);
+  width: 3.5em;
+  height: 3.5em;
+  border-radius: 50%;
+  margin: 0.31em 0.62em 0.31em 0px;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+.footer-form-email button svg {
+  color: var(--clr-text-middle);
+}
+
+.footer-bottom {
+  color: #85a1b9;
+  background-color: var(--clr-pri);
+  padding: 2.5em 2.5em 1.78em;
+  font-size: 0.875rem;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}

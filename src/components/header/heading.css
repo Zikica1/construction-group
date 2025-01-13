@@ -1,0 +1,38 @@
+.subtitle {
+  color: var(--clr-text-dark2);
+  position: relative;
+  font-size: 1rem;
+  line-height: 2;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+
+  @media (min-width: 48rem) {
+    font-size: 1.187rem;
+  }
+}
+
+.subtitle::before {
+  content: '';
+  height: 4px;
+  width: 35px;
+  background-image: var(--linear-gradient-2);
+
+  @media (min-width: 48rem) {
+    height: 5px;
+    width: 60px;
+  }
+}
+
+.title {
+  font-size: 1.875rem;
+  line-height: 1.2;
+  text-transform: capitalize;
+
+  @media (min-width: 48rem) {
+    font-size: 2.812rem;
+  }
+}

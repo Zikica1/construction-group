@@ -1,0 +1,144 @@
+.blogs {
+  padding: 4.375em 0.937em 4.375em 0.312em;
+
+  @media (min-width: 65rem) {
+    padding: 7.5em 0.937em 7.5em 0.312em;
+  }
+}
+
+.blogs-wrap {
+  overflow: hidden;
+}
+
+.blogs-wrap > *:not(:last-child) {
+  margin-block-end: 3em;
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  transition: translate 0.5s ease;
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+
+  @media (min-width: 768px) {
+    flex: 0 0 calc(100% / 2);
+  }
+
+  @media (min-width: 1040px) {
+    flex: 0 0 calc(100% / 4);
+  }
+}
+
+.blog-card-img img {
+  width: 100%;
+}
+
+.blog-card-title {
+  padding: 1.25em;
+  transition: 0.35s ease;
+  height: 220px;
+  flex-shrink: 0;
+}
+
+.blog-card:hover .blog-card-title {
+  color: var(--clr-text-light);
+  background: var(--clr-pri);
+}
+
+.blog-card-title > * {
+  margin-block-start: 1em;
+}
+
+.blog-card-date {
+  position: relative;
+  padding-inline-start: 3em;
+}
+
+.blog-card-date::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  background: var(--linear-gradient-2);
+  width: 2.5em;
+  height: 0.312em;
+}
+
+.blog-card-date p {
+  color: rgb(133, 161, 185);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.blog-card-title h3 {
+  text-transform: capitalize;
+  font-size: 1.25rem;
+}
+
+/* blogs-home */
+.blogs-home {
+  background-image: linear-gradient(
+    to top,
+    rgb(255 255 255) 60%,
+    var(--clr-pri) 60%
+  );
+  padding-inline: 20px;
+  scroll-snap-type: x mandatory;
+}
+
+.blogs-header {
+  color: white;
+  text-align: center;
+  margin-block-end: 45px;
+
+  @media (min-width: 65rem) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+.blogs-header h3 {
+  font-size: 38px;
+  line-height: 1.7;
+
+  @media (min-width: 48rem) {
+    font-size: 50px;
+  }
+
+  @media (min-width: 65rem) {
+    line-height: 1;
+  }
+}
+
+.blogs-header h2 {
+  color: var(--clr-text-light);
+
+  @media (min-width: 65rem) {
+    align-items: flex-start;
+  }
+}
+
+.blogs-buttons-wrap > *:first-child {
+  margin-inline-end: 10px;
+}
+
+.blog-button {
+  color: var(--clr-text-light2);
+  background-color: var(--clr-bg-blue-400);
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  display: inline-grid;
+  place-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.blog-button:hover {
+  color: var(--clr-pri);
+  background-color: var(--clr-sec);
+}

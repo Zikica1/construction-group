@@ -1,0 +1,46 @@
+.button {
+  display: inline-block;
+  background-color: var(--clr-sec);
+  border-radius: 100em;
+  margin-block: 1em;
+  padding: 1em 2.187em;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.button .text {
+  color: var(--clr-text-dark);
+  position: relative;
+  z-index: 1;
+}
+
+.button:hover .text {
+  color: var(--clr-text-light);
+}
+
+.button .overlay {
+  position: absolute;
+  width: 120%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0, 0);
+  transition: transform 0.5s ease;
+  isolation: isolate;
+}
+
+.button:hover .overlay {
+  transform: translate(-50%, -50%) scale(1, 1);
+}
+
+.button .overlay::after {
+  content: '';
+  position: relative;
+  border-radius: 50%;
+  display: block;
+  padding-block-start: 100%;
+  background-color: var(--clr-pri);
+  z-index: -1;
+}

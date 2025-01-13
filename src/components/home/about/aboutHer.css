@@ -1,0 +1,123 @@
+.about-her {
+  padding: 3.125em 2.187em;
+  overflow-x: clip;
+
+  @media (min-width: 63.75rem) {
+    padding: 13.75em 2.187em;
+  }
+}
+
+.about-her-wrap {
+  @media (min-width: 63.75rem) {
+    display: grid;
+    grid-template-columns: minmax(0, 40rem) minmax(0, 40rem);
+    gap: 3em;
+  }
+}
+
+.about-her-img {
+  display: grid;
+  margin-block-end: 50px;
+
+  @media (min-width: 786px) {
+    padding-inline: 30px;
+  }
+
+  @media (min-width: 1020px) {
+    padding-inline: 0;
+  }
+}
+
+.about-img-1 {
+  position: relative;
+  grid-column: 1;
+  grid-row: 1;
+  max-width: min(500px, 90%);
+  justify-self: start;
+}
+
+.about-img-1::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255 221 0/0.8);
+}
+
+.about-img-2 {
+  position: relative;
+  max-width: min(464px, 80%);
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: end;
+  align-self: end;
+  right: -5%;
+  bottom: -10%;
+
+  @media (min-width: 768px) {
+    right: unset;
+  }
+}
+
+.about-her-content {
+  padding-block-start: 50px;
+}
+
+.about-par-1 {
+  color: var(--clr-text-dark2);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-block: 2.42em;
+  max-width: 65ch;
+}
+
+.about-par-2 {
+  position: relative;
+  padding-inline-start: 45px;
+  max-width: 65ch;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.about-par-2::before {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 80%;
+  background-image: var(--linear-gradient-2);
+  align-content: center;
+  margin-inline-start: -30px;
+}
+
+.statistics-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-block-start: 50px;
+
+  @media (min-width: 48rem) {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+.statistics-wrap > *:not(:first-child) {
+  margin-block-start: 25px;
+
+  @media (min-width: 48rem) {
+    margin-block-start: 0;
+  }
+}
+
+.item h3 {
+  color: var(--clr-sec);
+  text-align: center;
+  font-size: 50px;
+}
+
+.item p {
+  color: var(--clr-text-dark2);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}

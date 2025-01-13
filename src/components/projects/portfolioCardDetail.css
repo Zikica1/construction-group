@@ -1,0 +1,123 @@
+.project-detail {
+  padding: 4.375em 35px;
+}
+
+.project-detail > a {
+  display: inline-block;
+  color: rgb(70, 69, 69);
+  margin-block-end: 4.375em;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.project-detail-wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'img'
+    'info'
+    'slider';
+  position: relative;
+
+  @media (min-width: 63.75rem) {
+    grid-template-columns:
+      minmax(1rem, 1fr)
+      repeat(2, minmax(0, 40rem))
+      minmax(1rem, 1fr);
+    grid-template-areas:
+      '. img info .'
+      '. slider info .';
+  }
+}
+
+.project-detail-img,
+.project-detail-text {
+  padding-inline: 35px;
+
+  @media (min-width: 63.75rem) {
+    padding-inline: 0;
+  }
+}
+
+.project-detail-img {
+  grid-area: img;
+}
+
+.project-detail-text {
+  grid-area: info;
+
+  @media (min-width: 63.75rem) {
+    padding-inline-start: 64px;
+  }
+}
+
+.project-detail-text h1 {
+  font-size: 3.125rem;
+  margin-block: 0.9em 0.4em;
+  line-height: 1.2;
+  text-transform: capitalize;
+  position: relative;
+
+  @media (min-width: 63.75rem) {
+    margin-block: 0 0.4em;
+  }
+}
+
+.project-detail-text h1::before {
+  @media (min-width: 63.75rem) {
+    content: '';
+    position: absolute;
+    left: -100px;
+    top: 30px;
+    height: 5px;
+    width: 74px;
+    background: var(--linear-gradient-2);
+  }
+}
+
+.project-detail-text p {
+  letter-spacing: 0.23px;
+  line-height: 1.6;
+  margin-block-end: 1.875em;
+}
+
+.project-detail-text a {
+  display: inline-block;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  margin-block: 2.5em;
+}
+
+.project-detail-slider {
+  grid-area: slider;
+  color: var(--clr-text-light);
+  background: var(--clr-pri);
+  padding: 2.187em;
+  margin-block: 2.812em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project-detail-slider button {
+  color: var(--clr-text-light);
+  background: var(--clr-bg-blue-400);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: inline-grid;
+  place-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.project-detail-slider button:hover {
+  color: var(--clr-text-middle);
+  background: var(--clr-sec);
+}
+
+.project-detail-slider span {
+  margin-inline: 0.75em;
+}

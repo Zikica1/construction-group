@@ -1,0 +1,51 @@
+.next-project {
+  @media (min-width: 65rem) {
+    padding-block-start: 2.2em;
+  }
+}
+
+.next-project-wrap {
+  background: url('/pictures/nextProject/next-project-mask.jpg') no-repeat
+    center center/cover;
+  padding: 2.81em 2.18em;
+  position: relative;
+  isolation: isolate;
+  overflow-x: clip;
+}
+
+.next-project-detail {
+  @media (min-width: 48rem) {
+    max-width: 65%;
+  }
+}
+
+.next-project-detail h3 {
+  color: rgb(18, 57, 92);
+  font-size: 1.56rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  margin-block: 0.8em;
+
+  @media (min-width: 48rem) {
+    font-size: 1.875rem;
+  }
+
+  @media (min-width: 65rem) {
+    font-size: 2.187em;
+  }
+
+  span {
+    font-weight: 600;
+  }
+}
+
+.next-project-img {
+  position: absolute;
+  bottom: 0px;
+  right: -75px;
+  z-index: -1;
+
+  @media (min-width: 48rem) {
+    max-width: 90%;
+  }
+}

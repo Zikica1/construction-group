@@ -1,0 +1,27 @@
+.button-quote {
+  display: inline-flex;
+  align-items: center;
+  color: var(--clr-text-light);
+  background-color: var(--clr-bg-blue-400);
+  border-radius: 50px;
+  padding-inline: 1.5em 0.437em;
+  height: 3.687em;
+}
+
+.button-quote .text {
+  color: var(--clr-text-light);
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  margin-inline-end: 2.5em;
+}
+
+.button-quote .icon {
+  color: var(--clr-text-middle);
+  width: 2.812em;
+  height: 2.812em;
+  border-radius: 50%;
+  background-color: var(--clr-sec);
+  display: grid;
+  place-content: center;
+}
