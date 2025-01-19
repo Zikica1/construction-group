@@ -19,6 +19,7 @@
 .company-img-wrap {
   padding-inline: 1.25em;
   margin-block-end: 5em;
+  position: relative;
 
   @media (min-width: 48rem) {
     display: flex;
@@ -42,6 +43,16 @@
   @media (min-width: 48rem) {
     margin-block-end: 0;
   }
+}
+
+.company-img-1,
+.company-img-2 {
+  height: 687px;
+}
+
+.company-img-1 img,
+.company-img-2 img {
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 }
 
 .company-detail {

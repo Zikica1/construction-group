@@ -1,3 +1,5 @@
+import { CiLocationOn, CiMail, CiAlarmOn } from 'react-icons/ci';
+
 export const mission = [
   {
     id: '0',
@@ -438,5 +440,28 @@ export const aboutClients = [
   {
     id: 5,
     imgUrl: '/pictures/aboutCom/about-client-6.png',
+  },
+];
+
+export const contact = [
+  {
+    id: '0',
+    title: 'Address:',
+    text: '47 W 13th St, New York, ',
+    subtext: 'NY 10011, USA',
+    Icon: CiLocationOn,
+  },
+  {
+    id: '1',
+    title: 'Contact:',
+    text: 'constructiongroup@gamil.com ',
+    subtext: '+55(0) 255 3333 555',
+    Icon: CiMail,
+  },
+  {
+    id: '2',
+    title: 'Opening Hours:',
+    text: 'Monday - Friday 08.00 - 22.00 sunday 08.00 - 16.00',
+    Icon: CiAlarmOn,
   },
 ];

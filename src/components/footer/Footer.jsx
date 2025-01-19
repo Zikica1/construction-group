@@ -94,9 +94,10 @@ const Footer = () => {
             className='footer-form-email'
             onSubmit={(e) => e.preventDefault()}
           >
-            <label htmlFor=''>Email</label>
+            <label name='email'>Email</label>
             <input
               type='email'
+              name='email'
               placeholder='Your email addres'
               value={email}
               onChange={(e) => setEmail(e.target.value)}

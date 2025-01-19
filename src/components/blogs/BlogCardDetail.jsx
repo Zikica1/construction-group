@@ -54,7 +54,7 @@ const BlogCardDetail = () => {
               e.preventDefault();
             }}
           >
-            <label htmlFor=''>
+            <label name='person'>
               Name (required)
               <input
                 type='text'
@@ -65,7 +65,7 @@ const BlogCardDetail = () => {
                 onChange={handleChange}
               />
             </label>
-            <label htmlFor=''>
+            <label name='email'>
               E-Mail (required)
               <input
                 type='email'
@@ -75,7 +75,7 @@ const BlogCardDetail = () => {
                 onChange={handleChange}
               />
             </label>
-            <label htmlFor=''>
+            <label name='website'>
               Website
               <input
                 type='text'
@@ -85,7 +85,7 @@ const BlogCardDetail = () => {
                 onChange={handleChange}
               />
             </label>
-            <label htmlFor=''>
+            <label name=''>
               <input
                 type='checkbox'
                 id='approval'
@@ -95,7 +95,7 @@ const BlogCardDetail = () => {
               Save my name, email, and website in this browser for the next time
               I comment.
             </label>
-            <label htmlFor=''>
+            <label name='comment'>
               Comment
               <textarea
                 value={contact.comment}

@@ -1,5 +1,5 @@
 .about-clients {
-  padding: 120px 35px 140px;
+  padding: 7.5em 2.187em 8.75em;
   text-align: center;
 
   @media (min-width: 65rem) {
@@ -15,13 +15,13 @@
 }
 
 .about-clients-detail h2 {
-  font-size: 30px;
+  font-size: 1.875rem;
 
   @media (min-width: 48rem) {
-    font-size: 45px;
+    font-size: 2.812rem;
   }
   @media (min-width: 65rem) {
-    font-size: 40px;
+    font-size: 2.5rem;
   }
 }
 
@@ -30,16 +30,34 @@
   color: rgba(0 0 0 / 0.8);
   font-size: 1rem;
   font-weight: 500;
+  position: relative;
+
+  @media (min-width: 65rem) {
+    display: flex;
+    align-items: center;
+    padding-inline-start: 3.375em;
+  }
+}
+
+.about-clients-detail span::before {
+  @media (min-width: 65rem) {
+    content: '';
+    position: absolute;
+    width: 2.5em;
+    height: 0.31em;
+    background-color: orange;
+    left: 0;
+  }
 }
 
 .about-clients-detail p {
   color: rgba(0 0 0 / 0.75);
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
-  margin-block: 45px;
+  margin-block: 3.21em;
 
   @media (min-width: 48rem) {
-    font-size: 19px;
+    font-size: 1.187rem;
   }
 }
 
@@ -54,21 +72,21 @@
   }
 }
 
-.about-brands-wrap li {
+.about-card {
   padding: 3.8em 1.56em;
   transition: all 0.25s ease-out;
   display: grid;
   place-content: center;
 
   @media (min-width: 48rem) {
-    padding: 30px 0px;
+    padding: 1.875em 0em;
   }
 }
 
-.about-brands-wrap li:hover {
+.about-card:hover {
   box-shadow: 0 0 35px 5px rgba(0 0 0 / 0.1);
 }
 
-.about-brands-wrap li img {
+.about-card img {
   margin-inline: auto;
 }
