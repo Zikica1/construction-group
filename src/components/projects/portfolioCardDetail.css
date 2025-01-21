@@ -1,5 +1,9 @@
 .project-detail {
-  padding: 4.375em 35px;
+  padding: 4.375em 2.187em;
+
+  @media (min-width: 65rem) {
+    padding: 4.375em 2.187em 15em;
+  }
 }
 
 .project-detail > a {
@@ -17,7 +21,8 @@
     'img'
     'info'
     'slider';
-  position: relative;
+  /* position: relative; */
+  grid-auto-flow: dense;
 
   @media (min-width: 63.75rem) {
     grid-template-columns:
@@ -32,7 +37,7 @@
 
 .project-detail-img,
 .project-detail-text {
-  padding-inline: 35px;
+  padding-inline: 2.187em;
 
   @media (min-width: 63.75rem) {
     padding-inline: 0;
@@ -47,7 +52,7 @@
   grid-area: info;
 
   @media (min-width: 63.75rem) {
-    padding-inline-start: 64px;
+    padding-inline-start: 4em;
   }
 }
 
@@ -98,6 +103,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (min-width: 65rem) {
+    margin-block: 0;
+  }
 }
 
 .project-detail-slider button {
@@ -105,8 +114,8 @@
   background: var(--clr-bg-blue-400);
   border: none;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 2.5em;
+  height: 2.5em;
   display: inline-grid;
   place-content: center;
   cursor: pointer;

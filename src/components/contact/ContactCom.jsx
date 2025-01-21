@@ -1,9 +1,46 @@
 import './contactCom.css';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { motion, useInView } from 'motion/react';
 import { contact } from '../data/db';
 import ContactCard from './ContactCard';
 import Heading from '../header/Heading';
+
+const variantMap = {
+  hidden: { opacity: 0, scale: 1.1 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      type: 'tween',
+      duration: 0.8,
+    },
+  },
+};
+
+const variantHead = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: 'tween',
+      duration: 0.8,
+    },
+  },
+};
+
+const varianForm = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: 'tween',
+      duration: 0.8,
+    },
+  },
+};
 
 const ContactCom = () => {
   const [message, setMessage] = useState({
@@ -11,6 +48,18 @@ const ContactCom = () => {
     mail: '',
     subject: '',
     text: '',
+  });
+  const ref = useRef(null);
+  const refForm = useRef(null);
+
+  const isInView = useInView(ref, {
+    once: true,
+    amount: 0.7,
+  });
+
+  const isInView2 = useInView(refForm, {
+    once: true,
+    amount: 0.35,
   });
 
   const handleChange = (e) => {
@@ -24,7 +73,12 @@ const ContactCom = () => {
     <section className='contact-com'>
       <div className='contact-com-wrap'>
         <div className='contact-com-top'>
-          <div className='contact-com-img'>
+          <motion.div
+            className='contact-com-img'
+            variants={variantMap}
+            initial='hidden'
+            animate='visible'
+          >
             {' '}
             <img
               src='/pictures/contact/contact-map-min.png'
@@ -33,7 +87,7 @@ const ContactCom = () => {
             <Link className='logo'>
               <img src='/pictures/contact/google-logo.jpg' alt='google-logo' />
             </Link>
-          </div>
+          </motion.div>
 
           <ul className='contact-com-information'>
             {contact.map((c) => (
@@ -43,13 +97,27 @@ const ContactCom = () => {
         </div>
 
         <div className='contact-com-bottom'>
-          <Heading title='Get In Touch' subtitle='Contact Us' isRow={true} />
-          <p>
-            Your email address will not be published. Required fields are marked
-            *
-          </p>
+          <motion.div
+            ref={ref}
+            variants={variantHead}
+            initial='hidden'
+            animate={isInView ? 'visible' : 'hidden'}
+          >
+            <Heading title='Get In Touch' subtitle='Contact Us' isRow={true} />
+            <p>
+              Your email address will not be published. Required fields are
+              marked *
+            </p>
+          </motion.div>
 
-          <form className='contact-form' onSubmit={(e) => e.preventDefault()}>
+          <motion.form
+            className='contact-form'
+            onSubmit={(e) => e.preventDefault()}
+            ref={refForm}
+            variants={varianForm}
+            initial='hidden'
+            animate={isInView2 ? 'visible' : 'hidden'}
+          >
             <label name='name'>
               <input
                 type='text'
@@ -92,7 +160,7 @@ const ContactCom = () => {
             <div style={{ textAlign: 'right' }}>
               <button>Submit</button>
             </div>
-          </form>
+          </motion.form>
         </div>
       </div>
     </section>

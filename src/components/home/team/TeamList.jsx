@@ -2,28 +2,41 @@ import PropTypes from 'prop-types';
 import { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 
-const animations = [
-  {
-    initial: { opacity: 0, x: -50 },
-    animate: { opacity: 1, x: 0 },
-    transition: { type: 'tween', duration: 1 },
-  },
-  {
-    initial: { opacity: 0, y: -50 },
-    animate: { opacity: 1, y: 0 },
-    transition: { type: 'tween', duration: 1 },
-  },
-  {
-    initial: { opacity: 0, y: -50 },
-    animate: { opacity: 1, y: 0 },
-    transition: { type: 'tween', duration: 1 },
-  },
-  {
-    initial: { opacity: 0, x: 50 },
-    animate: { opacity: 1, x: 0 },
-    transition: { type: 'tween', duration: 1 },
-  },
-];
+// const animations = [
+//   {
+//     initial: { opacity: 0, x: -50 },
+//     animate: { opacity: 1, x: 0 },
+//     transition: { type: 'tween', duration: 1 },
+//   },
+//   {
+//     initial: { opacity: 0, y: -50 },
+//     animate: { opacity: 1, y: 0 },
+//     transition: { type: 'tween', duration: 1 },
+//   },
+//   {
+//     initial: { opacity: 0, y: 50 },
+//     animate: { opacity: 1, y: 0 },
+//     transition: { type: 'tween', duration: 1 },
+//   },
+//   {
+//     initial: { opacity: 0, x: 50 },
+//     animate: { opacity: 1, x: 0 },
+//     transition: { type: 'tween', duration: 1 },
+//   },
+// ];
+
+const variantList = {
+  initial: { opacity: 0, x: 40 },
+  animate: (index) => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: 'tween',
+      duration: 0.8,
+      delay: index * 0.1,
+    },
+  }),
+};
 
 const TeamList = ({ item, index }) => {
   const refList = useRef(null);
@@ -35,13 +48,10 @@ const TeamList = ({ item, index }) => {
   return (
     <motion.li
       ref={refList}
-      initial={animations[index % animations.length].initial}
-      animate={
-        isInView
-          ? animations[index % animations.length].animate
-          : animations[index % animations.length].initial
-      }
-      transition={animations[index % animations.length].transition}
+      variants={variantList}
+      initial0='initial'
+      animate={isInView ? 'animate' : 'initial'}
+      custom={index}
     >
       <div className='team-list-img'>
         <img src={item.imgUrl} alt={item.name} />

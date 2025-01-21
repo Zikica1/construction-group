@@ -72,7 +72,7 @@ const Blogs = () => {
 
     refCard.current.scrollIntoView({
       behavior: 'smooth',
-      // block: 'center',
+      block: 'start',
       inline: 'start',
     });
   };
@@ -88,7 +88,7 @@ const Blogs = () => {
 
     refCard.current.scrollIntoView({
       behavior: 'smooth',
-      // block: 'center',
+      block: 'start',
       inline: 'start',
     });
   };

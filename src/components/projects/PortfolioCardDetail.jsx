@@ -14,12 +14,12 @@ const PortfolioCardDetail = () => {
   const navigate = useNavigate();
   const ref = useRef(null);
   const [isWindowScreen, setIsWindowScreen] = useState(
-    window.innerWidth > 1020
+    window.innerWidth > 1060
   );
 
   useEffect(() => {
     const handleResize = () => {
-      setIsWindowScreen(window.innerWidth > 1020);
+      setIsWindowScreen(window.innerWidth > 1060);
     };
 
     window.addEventListener('resize', handleResize);
@@ -28,10 +28,10 @@ const PortfolioCardDetail = () => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start 1%', 'end 40%'],
+    offset: ['start 1%', 'end 50%'],
   });
 
-  const translateY = useTransform(scrollYProgress, [0, 1], ['5%', '100%']);
+  const translateY = useTransform(scrollYProgress, [0, 1], ['5%', '80%']);
 
   const search = location.state?.search || '';
   const type = location.state?.type || 'all';
@@ -76,8 +76,9 @@ const PortfolioCardDetail = () => {
           <motion.div
             ref={ref}
             style={{
-              y: isWindowScreen && translateY,
+              y: isWindowScreen ? translateY : 0,
               transition: 'all 0.5s ease',
+              position: 'relative',
             }}
           >
             <h1>{projectDetail.title}</h1>

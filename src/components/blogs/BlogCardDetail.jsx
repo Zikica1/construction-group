@@ -85,10 +85,11 @@ const BlogCardDetail = () => {
                 onChange={handleChange}
               />
             </label>
-            <label name=''>
+            <label name='approval'>
               <input
                 type='checkbox'
                 id='approval'
+                name='approval'
                 checked={approval}
                 onChange={(e) => setApproval(e.target.checked)}
               />
@@ -104,7 +105,9 @@ const BlogCardDetail = () => {
                 onChange={handleChange}
               ></textarea>
             </label>
-            <button type='submit'>Submit</button>
+            <div style={{ textAlign: 'right' }}>
+              <button type='submit'>Submit</button>
+            </div>
           </form>
         </div>
       </div>
