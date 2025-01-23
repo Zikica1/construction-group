@@ -1,7 +1,6 @@
 import './blogs.css';
 import { useState, useEffect, useRef } from 'react';
 import { motion, useAnimate, useInView } from 'motion/react';
-import { flushSync } from 'react-dom';
 import { useLocation } from 'react-router-dom';
 import BlogCard from './BlogCard';
 import { blogs } from '../data/db';
@@ -12,7 +11,6 @@ import {
 } from 'react-icons/md';
 
 const Blogs = () => {
-  const [index, setIndex] = useState(0);
   const [columns, setColumns] = useState(0);
   const refCard = useRef(null);
   const [scopeHeading, animateHeading] = useAnimate();
@@ -49,8 +47,19 @@ const Blogs = () => {
   const updateColumns = () => {
     if (window.innerWidth >= 1040) {
       setColumns(4);
+    } else if (window.innerWidth >= 768) {
+      setColumns(2);
     } else {
       setColumns(1);
+    }
+
+    const parent = refCard.current ? refCard.current.offsetParent : null;
+
+    if (parent) {
+      parent.scrollTo({
+        left: 0,
+        behavior: 'auto',
+      });
     }
   };
 
@@ -61,36 +70,24 @@ const Blogs = () => {
     return () => window.removeEventListener('resize', updateColumns);
   }, []);
 
-  const handleNext = () => {
-    flushSync(() => {
-      if (index < blogsContent.length - 1) {
-        setIndex(index + columns);
-      } else {
-        setIndex(0);
-      }
-    });
+  const handleScrollTo = (direction) => {
+    const parent = refCard.current.offsetParent;
 
-    refCard.current.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-      inline: 'start',
-    });
-  };
+    if (parent) {
+      const parentStyle = window.getComputedStyle(parent);
+      const gap = parseFloat(parentStyle.gap || '0');
+      const cardWidth = refCard.current
+        ? refCard.current.offsetWidth + gap
+        : 200;
 
-  const handlePrev = () => {
-    flushSync(() => {
-      if (index === 0) {
-        setIndex(blogsContent.length - 1);
-      } else {
-        setIndex(index - columns);
-      }
-    });
+      const scrollAmount =
+        direction === 'next' ? columns * cardWidth : -columns * cardWidth;
 
-    refCard.current.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-      inline: 'start',
-    });
+      parent.scrollTo({
+        left: parent.scrollLeft + scrollAmount,
+        behavior: 'smooth',
+      });
+    }
   };
 
   return (
@@ -106,10 +103,16 @@ const Blogs = () => {
           </motion.div>
 
           <motion.div className='blogs-buttons-wrap' initial={{ opacity: 0 }}>
-            <button onClick={handlePrev} className='blog-button'>
+            <button
+              onClick={() => handleScrollTo('prev')}
+              className='blog-button'
+            >
               <MdKeyboardDoubleArrowLeft />
             </button>
-            <button onClick={handleNext} className='blog-button'>
+            <button
+              onClick={() => handleScrollTo('next')}
+              className='blog-button'
+            >
               <MdKeyboardDoubleArrowRight />
             </button>
           </motion.div>
@@ -124,7 +127,7 @@ const Blogs = () => {
         className={`blogs-wrap ${isHome ? 'flex' : 'grid'}`}
       >
         {blogsContent.map((blog) => (
-          <BlogCard key={blog.id} blog={blog} index={index} ref={refCard} />
+          <BlogCard key={blog.id} blog={blog} ref={refCard} />
         ))}
       </motion.div>
     </section>

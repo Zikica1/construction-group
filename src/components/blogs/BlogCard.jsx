@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 import { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 
-const BlogCard = forwardRef(({ blog, index }, ref) => {
+const BlogCard = forwardRef(({ blog }, ref) => {
   return (
-    <div ref={index.toString() === blog.id ? ref : null} className='blog-card'>
+    <div ref={ref} className='blog-card'>
       <Link to={`/blog/${blog.id}`}>
         <div className='blog-card-img'>
           <img src={blog.imgUrl} alt={`img-${blog.title}`} />

@@ -7,7 +7,10 @@
 }
 
 .blogs-wrap {
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
   overflow: hidden;
+  position: relative;
 }
 
 .blogs-wrap > *:not(:last-child) {
@@ -17,16 +20,16 @@
 .blog-card {
   display: flex;
   flex-direction: column;
-  transition: translate 0.5s ease;
   flex: 0 0 100%;
   scroll-snap-align: start;
   scroll-snap-stop: normal;
+  transition: translate 0.5s ease;
 
-  @media (min-width: 768px) {
+  @media (min-width: 48rem) {
     flex: 0 0 calc(100% / 2);
   }
 
-  @media (min-width: 1040px) {
+  @media (min-width: 65rem) {
     flex: 0 0 calc(100% / 4);
   }
 }
@@ -84,14 +87,14 @@
     rgb(255 255 255) 60%,
     var(--clr-pri) 60%
   );
-  padding-inline: 20px;
+  padding-inline: 1.25em;
   scroll-snap-type: x mandatory;
 }
 
 .blogs-header {
   color: white;
   text-align: center;
-  margin-block-end: 45px;
+  margin-block-end: 2.812em;
 
   @media (min-width: 65rem) {
     display: flex;
@@ -101,11 +104,11 @@
 }
 
 .blogs-header h3 {
-  font-size: 38px;
+  font-size: 2.375rem;
   line-height: 1.7;
 
   @media (min-width: 48rem) {
-    font-size: 50px;
+    font-size: 3.125rem;
   }
 
   @media (min-width: 65rem) {
@@ -122,14 +125,14 @@
 }
 
 .blogs-buttons-wrap > *:first-child {
-  margin-inline-end: 10px;
+  margin-inline-end: 0.625em;
 }
 
 .blog-button {
   color: var(--clr-text-light2);
   background-color: var(--clr-bg-blue-400);
-  width: 50px;
-  height: 50px;
+  width: 3.8em;
+  height: 3.8em;
   border: none;
   border-radius: 50%;
   display: inline-grid;
