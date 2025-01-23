@@ -1,4 +1,4 @@
-import './HomeProjects.css';
+import './homeProjects.css';
 import Portfolio from '../../projects/Portfolio';
 
 const HomeProjects = () => {
