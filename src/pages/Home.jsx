@@ -1,6 +1,6 @@
 import Hero from '../components/home/hero/Hero';
 import AboutHer from '../components/home/about/AboutHer';
-import Mission from '../components/home/mission/MIssion';
+import Mission from '../components/home/mission/Mission';
 import Services from '../components/home/services/Services';
 import Team from '../components/home/team/Team';
 import Machines from '../components/home/machines/Machines';
