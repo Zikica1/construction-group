@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import './Button.css';
+import './button.css';
 
 const Button = ({ title, url }) => {
   const location = useLocation();
