@@ -1,4 +1,4 @@
-import './NextProject.css';
+import './nextProject.css';
 import ButtonQuote from '../buttons/ButtonQuote';
 
 const NextProject = () => {
