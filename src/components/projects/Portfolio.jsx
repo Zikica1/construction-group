@@ -1,5 +1,5 @@
 import './portfolio.css';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useSearchParams, useLocation } from 'react-router-dom';
 import { motion, useInView } from 'motion/react';
 import Heading from '../header/Heading';
@@ -47,6 +47,7 @@ const Portfolio = () => {
   const refHeading = useRef(null);
   const refButtons = useRef(null);
   const refCards = useRef(null);
+  const [activeCardId, setActiveCardId] = useState(null);
 
   const isInView = useInView(refHeading, {
     once: true,
@@ -161,6 +162,8 @@ const Portfolio = () => {
             item={p}
             searchParams={searchParams}
             filterType={filterType}
+            isActive={activeCardId === p.id}
+            setActiveCardId={setActiveCardId}
           />
         ))}
       </motion.div>

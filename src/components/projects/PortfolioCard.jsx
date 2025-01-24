@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -45,19 +45,49 @@ const titleVariant = {
   },
 };
 
-const PortfolioCard = ({ item, searchParams, filterType }) => {
+const PortfolioCard = ({
+  item,
+  searchParams,
+  filterType,
+  isActive,
+  setActiveCardId,
+}) => {
   const [isHover, setIsHover] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= 500);
+    };
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+
+    return () => {
+      window.removeEventListener('resize', checkIsMobile);
+    };
+  }, []);
+
+  const handleClick = () => {
+    if (isMobile) {
+      if (isActive) {
+        setActiveCardId(null);
+      } else {
+        setActiveCardId(item.id); // Aktiviraj trenutnu karticu
+      }
+    }
+  };
 
   return (
     <div
       className='port-card'
       onPointerEnter={() => setIsHover(true)}
       onPointerLeave={() => setIsHover(false)}
+      onClick={isMobile ? handleClick : undefined}
     >
       <img className='port-card-img' src={item.imgUrl} alt={item.type} />
       <div className='port-card-detail'>
         <AnimatePresence>
-          {isHover && (
+          {(isActive || isHover) && (
             <motion.div
               className='port-card-link'
               key='hover-link'
@@ -97,6 +127,8 @@ PortfolioCard.propTypes = {
   item: PropTypes.object,
   searchParams: PropTypes.object,
   filterType: PropTypes.string,
+  isActive: PropTypes.bool,
+  setActiveCardId: PropTypes.func,
 };
 
 PortfolioCard.displayName = 'PortfolioCard';
