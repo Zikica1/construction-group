@@ -21,7 +21,6 @@
     'img'
     'info'
     'slider';
-  /* position: relative; */
   grid-auto-flow: dense;
 
   @media (min-width: 63.75rem) {
@@ -37,10 +36,10 @@
 
 .project-detail-img,
 .project-detail-text {
-  padding-inline: 2.187em;
+  padding-block: 2.187em;
 
   @media (min-width: 63.75rem) {
-    padding-inline: 0;
+    padding-block: 0;
   }
 }
 

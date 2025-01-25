@@ -72,7 +72,7 @@ const PortfolioCard = ({
       if (isActive) {
         setActiveCardId(null);
       } else {
-        setActiveCardId(item.id); // Aktiviraj trenutnu karticu
+        setActiveCardId(item.id);
       }
     }
   };

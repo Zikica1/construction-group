@@ -78,7 +78,6 @@ const PortfolioCardDetail = () => {
             style={{
               y: isWindowScreen ? translateY : 0,
               transition: 'all 0.5s ease',
-              // position: 'relative',
             }}
           >
             <h1>{projectDetail.title}</h1>
