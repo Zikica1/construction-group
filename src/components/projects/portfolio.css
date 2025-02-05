@@ -27,7 +27,8 @@
 .port-buttons-wrap {
   /* margin-block: 2em 2.375em; */
   display: flex;
-  gap: 1em;
+  flex-wrap: wrap;
+  column-gap: 1em;
 }
 
 .port-buttons-wrap > * {
