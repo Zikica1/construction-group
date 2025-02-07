@@ -110,6 +110,8 @@
 }
 
 .list-detail p {
+  color: var(--clr-text-light2);
   font-size: 0.937rem;
-  font-weight: 400;
+  font-weight: 500;
+  position: relative;
 }
