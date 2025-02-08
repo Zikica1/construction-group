@@ -1,6 +1,6 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import Header from './header/Header';
-// import ScrollToTop from './ScrollToTop';
+import ScrollToTop from './ScrollToTop';
 import NextProject from './nextProject/NextProject';
 import Footer from './footer/Footer';
 const LayoutMain = () => {
@@ -8,7 +8,7 @@ const LayoutMain = () => {
 
   return (
     <>
-      {/* <ScrollToTop /> */}
+      <ScrollToTop />
       <Header key={location.pathname} />
       <Outlet />
       <NextProject />
