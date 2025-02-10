@@ -69,7 +69,12 @@ const PortfolioCardDetail = () => {
       </Link>
       <div className='project-detail-wrap'>
         <div className='project-detail-img'>
-          <img src={projectDetail.img} alt={projectDetail.type} />
+          <img
+            srcSet={`${projectDetail.imgMob} 400w, ${projectDetail.img} 800w`}
+            sizes='(max-width: 500px) 400px, (max-width: 768px) 800px, 100vw'
+            src={projectDetail.img}
+            alt={projectDetail.type}
+          />
         </div>
 
         <div className='project-detail-text'>
