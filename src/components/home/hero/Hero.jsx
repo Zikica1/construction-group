@@ -53,10 +53,10 @@ const Hero = () => {
 
         <motion.div className='hero-img' initial={{ x: 100, opacity: 0 }}>
           <img
-            srcSet='/pictures/home/construction-worker-hero-411px.png 411w'
-            size='(max-width:510px) 411px'
-            src='/pictures/home/construction-worker-hero-856px.png'
+            src='/pictures/home/construction-worker-hero-700px.png'
             alt='img-worker'
+            srcSet='/pictures/home/construction-worker-hero-411px.png 411w, /pictures/home/construction-worker-hero-633px.png 633w, /pictures/home/construction-worker-hero-700px.png 700w'
+            sizes='(max-width:550px) 411px,(max-width:1400px) 633px, 700px'
           />
         </motion.div>
       </div>

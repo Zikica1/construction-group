@@ -89,19 +89,16 @@
   z-index: -1;
   bottom: 50px;
   right: -16%;
-  /* width: 85%; */
 
   @media (min-width: 31.25rem) {
     bottom: 0;
   }
 
   @media (min-width: 48rem) {
-    width: 60%;
     right: 0;
   }
 
   @media (min-width: 63.75rem) {
-    width: 50%;
     right: 35px;
   }
 }
