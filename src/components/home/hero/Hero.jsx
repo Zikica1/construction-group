@@ -52,7 +52,12 @@ const Hero = () => {
         </div>
 
         <motion.div className='hero-img' initial={{ x: 100, opacity: 0 }}>
-          <img src='/pictures/home/construction-worker-hero.png' alt='' />
+          <img
+            srcSet='/pictures/home/construction-worker-hero-411px.png 411w'
+            size='(max-width:510px) 411px'
+            src='/pictures/home/construction-worker-hero-856px.png'
+            alt='img-worker'
+          />
         </motion.div>
       </div>
     </section>

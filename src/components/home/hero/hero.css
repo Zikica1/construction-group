@@ -89,7 +89,7 @@
   z-index: -1;
   bottom: 50px;
   right: -16%;
-  width: 85%;
+  /* width: 85%; */
 
   @media (min-width: 31.25rem) {
     bottom: 0;
