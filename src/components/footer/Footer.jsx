@@ -21,7 +21,7 @@ const Footer = () => {
       <div className='footer-top-wrap grid'>
         <div className='footer-social-networks'>
           <div className='logo'>
-            <img src='/pictures/logo-footer.png' />
+            <img src='/pictures/logo-footer.png' alt='logo' />
           </div>
           <p>
             In a professional context it often happens that private or corporate
