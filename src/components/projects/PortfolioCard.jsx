@@ -84,7 +84,13 @@ const PortfolioCard = ({
       onPointerLeave={() => setIsHover(false)}
       onClick={isMobile ? handleClick : undefined}
     >
-      <img className='port-card-img' src={item.imgUrl} alt={item.type} />
+      <img
+        className='port-card-img'
+        srcSet={`${item.imgMob} 413w, ${item.imgUrl} 768w`}
+        size='(max-width: 500px) 413px, (max-width: 768px) 768px'
+        src={item.imgUrl}
+        alt={item.type}
+      />
       <div className='port-card-detail'>
         <AnimatePresence>
           {(isActive || isHover) && (
