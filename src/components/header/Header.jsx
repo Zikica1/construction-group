@@ -32,7 +32,7 @@ const Header = () => {
   return (
     <header className={`${isHome ? 'header-home' : 'header'} header-main`}>
       <Link to='/' className='logo'>
-        <img src='/pictures/header/Logo-header.png' alt='' />
+        <img src='/pictures/header/Logo-header.png' alt='logo' />
       </Link>
 
       <nav className={`${isOpen ? 'show' : ''} nav`}>
