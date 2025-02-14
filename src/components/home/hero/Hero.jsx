@@ -16,12 +16,12 @@ const Hero = () => {
       heroAnimate(
         '.hero-content-details',
         { y: 0 },
-        { type: 'tween', duration: 1.2, delay: 0.8 }
+        { type: 'tween', duration: 1.2 }
       );
       heroAnimate(
         '.button-ani',
         { x: 0, opacity: 1 },
-        { type: 'tween', duration: 0.8, delay: 2 }
+        { type: 'tween', duration: 0.8 }
       );
     };
 
