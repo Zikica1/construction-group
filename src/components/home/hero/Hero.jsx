@@ -55,7 +55,6 @@ const Hero = () => {
           <img
             src='/pictures/home/construction-worker-hero-700px.png'
             alt='img-worker'
-            fetchPriority='high'
             srcSet='/pictures/home/construction-worker-hero-411px.png 411w, /pictures/home/construction-worker-hero-633px.png 633w, /pictures/home/construction-worker-hero-700px.png 700w'
             sizes='(max-width:550px) 411px,(max-width:1400px) 633px, 700px'
           />
