@@ -54,11 +54,15 @@ const Hero = () => {
         <motion.div className='hero-img' initial={{ x: 100, opacity: 0 }}>
           <picture>
             <source
-              media='(max-width: 550px)'
+              media='(max-width: 500px)'
               srcSet='/pictures/home/construction-worker-hero-411px.png'
             />
             <source
-              media='(max-width: 1400px'
+              media='(max-width: 600px)'
+              srcSet='/pictures/home/construction-worker-hero-500px.png'
+            />
+            <source
+              media='(max-width: 1366px)'
               srcSet='/pictures/home/construction-worker-hero-633px.png'
             />
             <img
