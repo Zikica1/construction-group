@@ -48,7 +48,7 @@ const AboutHer = () => {
         <div className='about-her-img'>
           <div className='about-img-1'>
             <img
-              src='/pictures/aboutHer/info-img-1.jpg'
+              src='/pictures/aboutHer/info-img-1.webp'
               alt='building pictures'
             />
           </div>
