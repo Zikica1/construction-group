@@ -52,13 +52,20 @@ const Hero = () => {
         </div>
 
         <motion.div className='hero-img' initial={{ x: 100, opacity: 0 }}>
-          <img
-            fetchPriority='high'
-            src='/pictures/home/construction-worker-hero-700px.png'
-            alt='img-worker'
-            srcSet='/pictures/home/construction-worker-hero-411px.png 411w, /pictures/home/construction-worker-hero-633px.png 633w, /pictures/home/construction-worker-hero-700px.png 700w'
-            sizes='(max-width:550px) 411px,(max-width:1400px) 633px, 700px'
-          />
+          <picture>
+            <source
+              media='(max-width: 499px)'
+              srcSet='/pictures/home/construction-worker-hero-411px.png'
+            />
+            <source
+              media='(max-width: 1400px'
+              srcSet='/pictures/home/construction-worker-hero-633px.png'
+            />
+            <img
+              src='/pictures/home/construction-worker-hero-700px.png'
+              alt='img-worker'
+            />
+          </picture>
         </motion.div>
       </div>
     </section>
