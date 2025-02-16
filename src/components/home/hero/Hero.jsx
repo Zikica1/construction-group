@@ -54,7 +54,7 @@ const Hero = () => {
         <motion.div className='hero-img' initial={{ x: 100, opacity: 0 }}>
           <picture>
             <source
-              media='(max-width: 499px)'
+              media='(max-width: 550px)'
               srcSet='/pictures/home/construction-worker-hero-411px.png'
             />
             <source
