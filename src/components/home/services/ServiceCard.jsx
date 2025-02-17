@@ -1,3 +1,4 @@
+import './serviceCard.css';
 import PropTypes from 'prop-types';
 import { motion } from 'motion/react';
 import { FaChevronRight } from 'react-icons/fa';
