@@ -8,20 +8,20 @@ const Hero = () => {
 
   useEffect(() => {
     const handleAnimate = () => {
-      // heroAnimate(
-      //   '.hero-img',
-      //   { x: 0, opacity: 1 },
-      //   { type: 'tween', duration: 1.9 }
-      // );
+      heroAnimate(
+        '.hero-img',
+        { x: 0, opacity: 1 },
+        { type: 'tween', duration: 1.2 }
+      );
       heroAnimate(
         '.hero-content-details',
         { y: 0 },
-        { type: 'tween', duration: 1.2 }
+        { type: 'tween', duration: 0.8 }
       );
       heroAnimate(
         '.button-ani',
         { x: 0, opacity: 1 },
-        { type: 'tween', duration: 0.8 }
+        { type: 'tween', duration: 0.5 }
       );
     };
 
