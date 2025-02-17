@@ -8,11 +8,11 @@ const Hero = () => {
 
   useEffect(() => {
     const handleAnimate = () => {
-      heroAnimate(
-        '.hero-img',
-        { x: 0, opacity: 1 },
-        { type: 'tween', duration: 1.9 }
-      );
+      // heroAnimate(
+      //   '.hero-img',
+      //   { x: 0, opacity: 1 },
+      //   { type: 'tween', duration: 1.9 }
+      // );
       heroAnimate(
         '.hero-content-details',
         { y: 0 },
