@@ -50,10 +50,15 @@ const AboutHer = () => {
             <img
               src='/pictures/aboutHer/info-img-1.webp'
               alt='building pictures'
+              loading='lazy'
             />
           </div>
           <div className='about-img-2'>
-            <img src='/pictures/aboutHer/worker.jpg' alt='worker-img' />
+            <img
+              src='/pictures/aboutHer/worker.jpg'
+              alt='worker-img'
+              loading='lazy'
+            />
           </div>
         </div>
 
