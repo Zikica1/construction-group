@@ -25,7 +25,6 @@
 }
 
 .port-buttons-wrap {
-  /* margin-block: 2em 2.375em; */
   display: flex;
   flex-wrap: wrap;
   column-gap: 0.8em;
@@ -70,6 +69,7 @@
 .port-cards-wrap > *:nth-child(6) {
   grid-column: 1 / -1;
 }
+
 .port-cards-wrap > *:nth-child(9) {
   grid-column: 1 / -1;
 
