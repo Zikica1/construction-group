@@ -37,21 +37,6 @@ const Hero = () => {
     handleAnimate();
   }, [heroAnimate]);
 
-  useEffect(() => {
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    link.as = 'image';
-    link.href = '/pictures/home/hero-bg1.webp';
-    link.type = 'image/webp';
-    link.fetchpriority = 'high';
-
-    document.head.appendChild(link);
-
-    return () => {
-      document.head.removeChild(link);
-    };
-  }, []);
-
   return (
     <section className='hero' style={backgroundStyle}>
       <img
