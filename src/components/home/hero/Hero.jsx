@@ -6,6 +6,15 @@ import { useAnimate, motion } from 'motion/react';
 const Hero = () => {
   const [heroScope, heroAnimate] = useAnimate();
 
+  const backgroundStyle = {
+    backgroundColor: 'rgba(0, 7, 42, 0.8)',
+    backgroundImage: 'url(/pictures/home/hero-bg1.webp)',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundBlendMode: 'darken',
+  };
+
   useEffect(() => {
     const handleAnimate = () => {
       heroAnimate(
@@ -28,21 +37,26 @@ const Hero = () => {
     handleAnimate();
   }, [heroAnimate]);
 
-  const backgroundStyle = {
-    backgroundColor: 'rgba(0, 7, 42, 0.8)',
-    backgroundImage: 'url(/pictures/home/hero-bg1.webp)',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundBlendMode: 'darken',
-  };
+  useEffect(() => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = '/pictures/home/hero-bg1.webp';
+    link.type = 'image/webp';
+    link.fetchPriority = 'high';
+
+    document.head.appendChild(link);
+
+    return () => {
+      document.head.removeChild(link);
+    };
+  }, []);
 
   return (
     <section className='hero' style={backgroundStyle}>
       <img
         src='/pictures/home/hero-bg1.webp'
         alt='Preload'
-        fetchPriority='high'
         style={{ display: 'none' }}
       />
       <div ref={heroScope} className='hero-wrapper'>
