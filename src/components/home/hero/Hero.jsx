@@ -28,17 +28,18 @@ const Hero = () => {
     handleAnimate();
   }, [heroAnimate]);
 
-  const backgroundStyle = {
-    backgroundColor: 'rgba(0, 7, 42, 0.8)',
-    backgroundImage: 'url(/pictures/home/hero-bg1.webp)',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundBlendMode: 'darken',
-  };
-
   return (
-    <section className='hero' style={backgroundStyle}>
+    <section
+      className='hero'
+      style={{
+        backgroundColor: 'rgba(0, 7, 42, 0.8)',
+        backgroundImage: 'url(/pictures/home/hero-bg1.webp)',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundBlendMode: 'darken',
+      }}
+    >
       <img
         src='/pictures/home/hero-bg1.webp'
         alt='Preload'
