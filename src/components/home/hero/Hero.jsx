@@ -28,8 +28,25 @@ const Hero = () => {
     handleAnimate();
   }, [heroAnimate]);
 
+  // const backgroundStyle = {
+  //   backgroundImg: 'url(/pictures/home/hero-bg1.webp)',
+  //   backgroundRepeat: 'no-repeat',
+  //   backgroundSize: 'cover',
+  //   backgroundPosition: 'center',
+  // };
+
   return (
-    <section className='hero'>
+    <section
+      className='hero'
+      style={{
+        backgroundColor: 'rgba(0, 7, 42, 0.8)',
+        backgroundImage: 'url(/pictures/home/hero-bg1.webp)',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundBlendMode: 'darken',
+      }}
+    >
       <div ref={heroScope} className='hero-wrapper'>
         <div className='hero-content-wrap'>
           <div className='hero-content'>
