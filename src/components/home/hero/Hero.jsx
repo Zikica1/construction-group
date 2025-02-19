@@ -47,6 +47,11 @@ const Hero = () => {
         backgroundBlendMode: 'darken',
       }}
     >
+      <img
+        src='/pictures/home/hero-bg1.webp'
+        alt='Preload'
+        style={{ display: 'none' }}
+      />
       <div ref={heroScope} className='hero-wrapper'>
         <div className='hero-content-wrap'>
           <div className='hero-content'>
