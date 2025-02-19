@@ -43,7 +43,7 @@ const Hero = () => {
     link.as = 'image';
     link.href = '/pictures/home/hero-bg1.webp';
     link.type = 'image/webp';
-    link.fetchPriority = 'high';
+    link.fetchpriority = 'high';
 
     document.head.appendChild(link);
 
