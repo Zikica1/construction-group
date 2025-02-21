@@ -21,7 +21,7 @@ const Hero = () => {
       heroAnimate(
         '.hero-img',
         { x: 0, opacity: 1 },
-        { type: 'tween', duration: 1.2 }
+        { type: 'tween', duration: 1 }
       );
       heroAnimate(
         '.hero-content-details',
