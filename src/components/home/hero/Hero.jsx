@@ -3,7 +3,7 @@ import Button from '../../buttons/Button';
 import { useEffect } from 'react';
 import { useAnimate, motion } from 'motion/react';
 
-// initial={{ x: 100, opacity: 0 }}
+//
 const Hero = () => {
   const [heroScope, heroAnimate] = useAnimate();
 
@@ -18,11 +18,11 @@ const Hero = () => {
 
   useEffect(() => {
     const handleAnimate = () => {
-      // heroAnimate(
-      //   '.hero-img',
-      //   { x: 0, opacity: 1 },
-      //   { type: 'tween', duration: 1.2 }
-      // );
+      heroAnimate(
+        '.hero-img',
+        { x: 0, opacity: 1 },
+        { type: 'tween', duration: 1.2 }
+      );
       heroAnimate(
         '.hero-content-details',
         { y: 0 },
@@ -66,7 +66,7 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        <motion.div className='hero-img'>
+        <motion.div className='hero-img' initial={{ x: 100, opacity: 0 }}>
           <picture>
             <source
               media='(max-width: 500px)'
