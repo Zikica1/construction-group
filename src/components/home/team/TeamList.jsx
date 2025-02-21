@@ -54,7 +54,7 @@ const TeamList = ({ item, index }) => {
       custom={index}
     >
       <div className='team-list-img'>
-        <img src={item.imgUrl} alt={item.name} />
+        <img src={item.imgUrl} alt={item.name} loading='lazy' />
       </div>
 
       <div className='team-list-des'>

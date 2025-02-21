@@ -1,6 +1,5 @@
 .header-main {
   color: var(--clr-text-light);
-  /* background: var(--clr-pri); */
   padding: 1.56em;
   display: flex;
   justify-content: space-between;
