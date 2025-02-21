@@ -2,29 +2,6 @@ import PropTypes from 'prop-types';
 import { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 
-// const animations = [
-//   {
-//     initial: { opacity: 0, x: -50 },
-//     animate: { opacity: 1, x: 0 },
-//     transition: { type: 'tween', duration: 1 },
-//   },
-//   {
-//     initial: { opacity: 0, y: -50 },
-//     animate: { opacity: 1, y: 0 },
-//     transition: { type: 'tween', duration: 1 },
-//   },
-//   {
-//     initial: { opacity: 0, y: 50 },
-//     animate: { opacity: 1, y: 0 },
-//     transition: { type: 'tween', duration: 1 },
-//   },
-//   {
-//     initial: { opacity: 0, x: 50 },
-//     animate: { opacity: 1, x: 0 },
-//     transition: { type: 'tween', duration: 1 },
-//   },
-// ];
-
 const variantList = {
   initial: { opacity: 0, x: 40 },
   animate: (index) => ({
