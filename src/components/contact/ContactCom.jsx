@@ -80,10 +80,24 @@ const ContactCom = () => {
             animate='visible'
           >
             {' '}
-            <img
-              src='/pictures/contact/contact-map-min.png'
-              alt='contact-map'
-            />
+            <picture>
+              <source
+                srcSet='/pictures/contact/contact-map-413px.webp'
+                media='(max-width:500px)'
+              />
+              <source
+                srcSet='/pictures/contact/contact-map-680px.webp'
+                media='(max-width:768px)'
+              />
+              <source
+                srcSet='/pictures/contact/contact-map-950px.webp'
+                media='(max-width:1040px)'
+              />
+              <img
+                src='/pictures/contact/contact-map-750px.webp'
+                alt='contact-map'
+              />
+            </picture>
             <Link className='logo'>
               <img src='/pictures/contact/google-logo.jpg' alt='google-logo' />
             </Link>
