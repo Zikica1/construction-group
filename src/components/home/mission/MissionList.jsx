@@ -44,7 +44,7 @@ const MissionList = ({ item, index }) => {
       transition={missionAni[index % missionAni.length].animate}
     >
       <div className='list-img'>
-        <img src={item.imgUrl} alt='' />
+        <img loading='lazy' src={item.imgUrl} alt='' />
       </div>
 
       <div className='list-detail'>

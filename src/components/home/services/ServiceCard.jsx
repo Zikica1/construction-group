@@ -13,7 +13,7 @@ const ServiceCard = ({ service }) => {
       transition={{ type: 'tween', duration: 0.8 }}
     >
       <div className='service-img'>
-        <img src={service.img} alt={service.title} />
+        <img loading='lazy' src={service.img} alt={service.title} />
       </div>
       <h3>{service.title}</h3>
       <p>{service.text}</p>
