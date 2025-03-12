@@ -55,10 +55,11 @@ const PortfolioCard = ({
   const [isHover, setIsHover] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
+  const checkIsMobile = () => {
+    setIsMobile(window.innerWidth <= 500);
+  };
+
   useEffect(() => {
-    const checkIsMobile = () => {
-      setIsMobile(window.innerWidth <= 500);
-    };
     checkIsMobile();
     window.addEventListener('resize', checkIsMobile);
 
