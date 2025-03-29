@@ -25,6 +25,7 @@ const ContactCard = ({ item }) => {
   });
 
   const Icon = item.Icon;
+
   return (
     <motion.li
       ref={ref}

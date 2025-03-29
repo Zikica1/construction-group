@@ -26,7 +26,7 @@ const TeamList = ({ item, index }) => {
     <motion.li
       ref={refList}
       variants={variantList}
-      initial0='initial'
+      initial='initial'
       animate={isInView ? 'animate' : 'initial'}
       custom={index}
     >
