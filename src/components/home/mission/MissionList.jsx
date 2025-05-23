@@ -6,22 +6,22 @@ const missionAni = [
   {
     initial: { opacity: 0, x: -50 },
     animate: { opacity: 1, x: 0 },
-    transition: { type: 'tween', duration: 1, ease: 'easeInOut' },
+    transition: { type: 'tween', duration: 0.25, ease: 'easeInOut' },
   },
   {
     initial: { opacity: 0, x: 50 },
     animate: { opacity: 1, x: 0 },
-    transition: { type: 'tween', duration: 1, ease: 'easeInOut' },
+    transition: { type: 'tween', duration: 0.25, ease: 'easeInOut' },
   },
   {
     initial: { opacity: 0, x: -50 },
     animate: { opacity: 1, x: 0 },
-    transition: { type: 'tween', duration: 1, ease: 'easeInOut' },
+    transition: { type: 'tween', duration: 0.25, ease: 'easeInOut' },
   },
   {
     initial: { opacity: 0, x: 50 },
     animate: { opacity: 1, x: 0 },
-    transition: { type: 'tween', duration: 1, ease: 'easeInOut' },
+    transition: { type: 'tween', duration: 0.25, ease: 'easeInOut' },
   },
 ];
 
@@ -41,7 +41,7 @@ const MissionList = ({ item, index }) => {
           ? missionAni[index % missionAni.length].animate
           : missionAni[index % missionAni.length].initial
       }
-      transition={missionAni[index % missionAni.length].animate}
+      transition={missionAni[index % missionAni.length].transition}
     >
       <div className='list-img'>
         <img loading='lazy' src={item.imgUrl} alt='' />
