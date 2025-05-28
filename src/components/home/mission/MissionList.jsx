@@ -6,22 +6,22 @@ const missionAni = [
   {
     initial: { opacity: 0, x: -50 },
     animate: { opacity: 1, x: 0 },
-    transition: { type: 'tween', duration: 0.25, ease: 'easeInOut' },
+    transition: { type: 'tween', duration: 0.35, ease: 'easeInOut' },
   },
   {
     initial: { opacity: 0, x: 50 },
     animate: { opacity: 1, x: 0 },
-    transition: { type: 'tween', duration: 0.25, ease: 'easeInOut' },
+    transition: { type: 'tween', duration: 0.35, ease: 'easeInOut' },
   },
   {
     initial: { opacity: 0, x: -50 },
     animate: { opacity: 1, x: 0 },
-    transition: { type: 'tween', duration: 0.25, ease: 'easeInOut' },
+    transition: { type: 'tween', duration: 0.35, ease: 'easeInOut' },
   },
   {
     initial: { opacity: 0, x: 50 },
     animate: { opacity: 1, x: 0 },
-    transition: { type: 'tween', duration: 0.25, ease: 'easeInOut' },
+    transition: { type: 'tween', duration: 0.35, ease: 'easeInOut' },
   },
 ];
 

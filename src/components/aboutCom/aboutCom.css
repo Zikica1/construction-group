@@ -112,7 +112,7 @@
   opacity: 0.85;
 }
 
-.company-detail h2 + p {
+.company-par-1 {
   @media (min-width: 48rem) {
     font-size: 1.25rem;
     font-weight: 500;
@@ -122,7 +122,7 @@
   }
 }
 
-.company-detail p + p {
+.company-par-2 {
   @media (min-width: 48rem) {
     position: relative;
     padding-left: 1.875em;
@@ -136,7 +136,7 @@
   }
 }
 
-.company-detail p + p::before {
+.company-par-2::before {
   @media (min-width: 48rem) {
     content: '';
     position: absolute;

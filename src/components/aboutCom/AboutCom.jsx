@@ -64,12 +64,16 @@ const AboutCom = () => {
             Innovative buildings with new materials
           </motion.h2>
 
-          <motion.p className='animate-2' initial={{ opacity: 0, y: 50 }}>
+          <motion.p
+            className='company-par-1 animate-2'
+            initial={{ opacity: 0, y: 50 }}
+          >
             Our company is at the forefront of innovative construction,
             combining advanced techniques with cutting-edge materials to
             redefine modern architecture. Sustainability drives every project.
           </motion.p>
           <motion.p
+            className='company-par-2'
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 1 }}
