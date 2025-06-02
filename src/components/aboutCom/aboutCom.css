@@ -100,8 +100,8 @@
   @media (min-width: 65rem) {
     content: '';
     position: absolute;
-    display: inline-block;
     left: 0;
+    top: 0;
     height: 5px;
     width: 40px;
     background-image: var(--linear-gradient-2);
