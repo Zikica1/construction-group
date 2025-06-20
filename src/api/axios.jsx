@@ -1,12 +1,12 @@
 import axios from 'axios';
 
 const axiosMain = axios.create({
-  baseURL: 'http://localhost:3500',
+  baseURL: 'https://construction-group-api.onrender.com',
   withCredentials: true,
 });
 
 export const axiosPrivate = axiosMain.create({
-  baseURL: 'http://localhost:3500',
+  baseURL: 'https://construction-group-api.onrender.com',
   headers: { 'Content-Type': 'application/json' },
   withCredentials: true,
 });
