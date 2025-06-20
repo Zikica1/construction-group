@@ -1,6 +1,7 @@
 import './header.css';
 import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
+import { FaUserCircle } from 'react-icons/fa';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -76,6 +77,19 @@ const Header = () => {
             >
               Contact
             </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to='admin'
+              style={({ isActive }) => (isActive ? activeStyle : null)}
+            >
+              Admin
+            </NavLink>
+          </li>
+          <li>
+            <Link to='register' title='login'>
+              <FaUserCircle className='user-icon' />
+            </Link>
           </li>
         </ul>
       </nav>

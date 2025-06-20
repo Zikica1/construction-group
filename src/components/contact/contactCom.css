@@ -48,3 +48,21 @@
     gap: 1em;
   }
 }
+
+.offScreen {
+  position: absolute;
+  left: -1000px;
+}
+
+div p.message-success {
+  font-size: 1.25rem;
+  font-weight: 500;
+  font-family: 'Poppins';
+  margin: 0;
+}
+
+.icon-valid {
+  color: limegreen;
+  width: 20px;
+  height: 20px;
+}

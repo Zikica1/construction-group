@@ -1,0 +1,46 @@
+.message-detail {
+  width: 100;
+  height: 100vh;
+  padding: 25px;
+}
+
+.message-header {
+  margin-block: 1em;
+}
+
+.message-header h2 {
+  font-size: 24px;
+  text-transform: capitalize;
+}
+
+.message-email,
+.message-date {
+  font-size: 13px;
+}
+
+.message-det-body {
+  color: rgba(0 0 0 /0.9);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  max-width: 65ch;
+  margin-block: 2em;
+}
+
+.delete-button {
+  color: white;
+  background-color: var(--clr-bg-blue-400);
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 16px;
+  margin-block: 1em;
+  cursor: pointer;
+  scale: 1;
+  transition: scale 0.25s ease;
+}
+
+.delete-button:hover {
+  scale: 0.99;
+}

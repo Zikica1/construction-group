@@ -1,0 +1,16 @@
+.persist-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-block-start: 1em;
+}
+
+.persist-check input {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+}
+
+.persist-check label {
+  font-size: 14px;
+}

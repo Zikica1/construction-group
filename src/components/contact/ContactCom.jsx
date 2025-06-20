@@ -1,10 +1,12 @@
 import './contactCom.css';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useInView } from 'motion/react';
 import { contact } from '../data/db';
 import ContactCard from './ContactCard';
 import Heading from '../header/Heading';
+import useAxiosPrivate from '../../api/hooks/useAxiosPrivate';
+import { FaCheck } from 'react-icons/fa';
 
 const variantMap = {
   hidden: { opacity: 0, scale: 1.1 },
@@ -49,8 +51,15 @@ const ContactCom = () => {
     subject: '',
     text: '',
   });
+  const [msgErr, setMsgErr] = useState('');
+  const [isSending, setIsSending] = useState(false);
   const ref = useRef(null);
   const refForm = useRef(null);
+  const refErr = useRef(null);
+  const timeoutRef = useRef(null);
+  const sendingRef = useRef(null);
+
+  const axiosPrivate = useAxiosPrivate();
 
   const isInView = useInView(ref, {
     once: true,
@@ -62,11 +71,54 @@ const ContactCom = () => {
     amount: 0.35,
   });
 
+  useEffect(() => {
+    return () => clearTimeout(timeoutRef.current);
+  }, []);
+
   const handleChange = (e) => {
     setMessage({
       ...message,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handleSending = () => {
+    setIsSending(true);
+    sendingRef.current?.scrollIntoView({ behavior: 'smooth' });
+
+    timeoutRef.current = setTimeout(() => {
+      setIsSending(false);
+    }, 3500);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      await axiosPrivate.post('/contact', {
+        name: message.name,
+        email: message.mail,
+        subject: message.subject,
+        text: message.text,
+      });
+      setMessage({
+        name: '',
+        mail: '',
+        subject: '',
+        text: '',
+      });
+      handleSending();
+    } catch (err) {
+      if (!err?.response) {
+        setMsgErr('No server response');
+      } else if (err.response.status === 400) {
+        setMsgErr('One of the fields name,email,subject,text is missing');
+      } else {
+        setMsgErr('Sending failed');
+      }
+
+      refErr.current?.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -123,10 +175,21 @@ const ContactCom = () => {
               marked *
             </p>
           </motion.div>
+          <p ref={refErr} className={msgErr ? 'errmsg' : 'offscreen'}>
+            {msgErr}
+          </p>
+          <div
+            ref={sendingRef}
+            className={isSending ? 'isSending' : 'offScreen'}
+            style={{ display: 'flex', gap: '0.5em', alignItems: 'center' }}
+          >
+            <p className='message-success'>Message sent</p>
+            <FaCheck className='icon-valid' />
+          </div>
 
           <motion.form
             className='contact-form'
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={handleSubmit}
             ref={refForm}
             variants={varianForm}
             initial='hidden'
@@ -136,16 +199,18 @@ const ContactCom = () => {
               <input
                 type='text'
                 name='name'
+                autoComplete='off'
                 id='name'
                 placeholder='Name'
                 value={message.name}
                 onChange={(e) => handleChange(e)}
               />
             </label>
-            <label name='email'>
+            <label htmlFor='email'>
               <input
                 type='email'
-                name='email'
+                name='mail'
+                autoComplete='off'
                 id='email'
                 placeholder='E-mail'
                 value={message.mail}
@@ -156,6 +221,7 @@ const ContactCom = () => {
               <input
                 type='text'
                 name='subject'
+                autoComplete='off'
                 id='subject'
                 placeholder='Subject'
                 value={message.subject}
