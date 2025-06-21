@@ -99,10 +99,10 @@ const Footer = () => {
                 className='footer-form-email'
                 onSubmit={(e) => e.preventDefault()}
               >
-                <label name='email'>Email</label>
+                <label id='email'>Email</label>
                 <input
                   type='email'
-                  name='email'
+                  id='email'
                   autoCapitalize='off'
                   placeholder='Your email addres'
                   value={email}

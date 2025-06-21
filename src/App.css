@@ -107,9 +107,15 @@ svg {
   }
 }
 
+/* .main-grid > * {
+  min-width: 0;
+  overflow-wrap: break-word;
+} */
+
 .grid {
   display: grid;
   gap: var(--grid-gap, 1em);
+  grid-template-columns: 1fr;
 
   @media (min-width: 48rem) {
     grid-template-columns: repeat(
