@@ -252,7 +252,9 @@ const ContactCom = () => {
               ></textarea>
             </label>
             <div style={{ textAlign: 'right' }}>
-              <button disabled={sending || message.text.length === 0}>
+              <button
+                disabled={status === 'sending' || message.text.length === 0}
+              >
                 Submit
               </button>
             </div>
