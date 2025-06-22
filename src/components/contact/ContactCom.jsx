@@ -75,8 +75,14 @@ const ContactCom = () => {
   });
 
   useEffect(() => {
+    if (status === 'sent') {
+      timeoutRef.current = setTimeout(() => {
+        setStatus('typing');
+        sendingRef.current?.scrollIntoView({ behavior: 'smooth' });
+      }, 3500);
+    }
     return () => clearTimeout(timeoutRef.current);
-  }, []);
+  }, [status]);
 
   const handleChange = (e) => {
     setMessage({
@@ -85,13 +91,13 @@ const ContactCom = () => {
     });
   };
 
-  const handleSending = () => {
-    sendingRef.current?.scrollIntoView({ behavior: 'smooth' });
+  // const handleSending = () => {
+  //   sendingRef.current?.scrollIntoView({ behavior: 'smooth' });
 
-    timeoutRef.current = setTimeout(() => {
-      setStatus('typing');
-    }, 3500);
-  };
+  //  timeoutRef.current = setTimeout(() => {
+  //     setStatus('typing');
+  //   }, 3500);
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -112,7 +118,6 @@ const ContactCom = () => {
         text: '',
       });
       setStatus('sent');
-      handleSending();
     } catch (err) {
       if (!err?.response) {
         setMsgErr('No server response');
