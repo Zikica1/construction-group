@@ -59,9 +59,6 @@ const ContactCom = () => {
   const timeoutRef = useRef(null);
   const sendingRef = useRef(null);
 
-  const sent = status === 'sent';
-  const sending = status === 'sending';
-
   const axiosPrivate = useAxiosPrivate();
 
   const isInView = useInView(ref, {
@@ -191,14 +188,14 @@ const ContactCom = () => {
           </p>
           <div
             ref={sendingRef}
-            className={sent ? 'isSending' : 'offScreen'}
+            className={status === 'sent' ? 'isSending' : 'offScreen'}
             style={{ display: 'flex', gap: '0.5em', alignItems: 'center' }}
           >
             <p className='message-success'>Message sent</p>
             <FaCheck className='icon-valid' />
           </div>
 
-          {sending && <p>Sending...</p>}
+          {status === 'sending' && <p>Sending...</p>}
 
           <motion.form
             className='contact-form'
