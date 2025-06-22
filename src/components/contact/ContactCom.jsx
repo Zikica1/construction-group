@@ -7,7 +7,6 @@ import ContactCard from './ContactCard';
 import Heading from '../header/Heading';
 import useAxiosPrivate from '../../api/hooks/useAxiosPrivate';
 import { FaCheck } from 'react-icons/fa';
-import { text } from 'motion/react-client';
 
 const variantMap = {
   hidden: { opacity: 0, scale: 1.1 },
@@ -90,9 +89,7 @@ const ContactCom = () => {
     sendingRef.current?.scrollIntoView({ behavior: 'smooth' });
 
     timeoutRef.current = setTimeout(() => {
-      if (sent) {
-        setStatus('typing');
-      }
+      setStatus('typing');
     }, 3500);
   };
 
@@ -253,7 +250,9 @@ const ContactCom = () => {
               ></textarea>
             </label>
             <div style={{ textAlign: 'right' }}>
-              <button disabled={sending || text.length === 0}>Submit</button>
+              <button disabled={sending || message.text.length === 0}>
+                Submit
+              </button>
             </div>
           </motion.form>
         </div>
