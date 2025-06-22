@@ -7,6 +7,7 @@ import ContactCard from './ContactCard';
 import Heading from '../header/Heading';
 import useAxiosPrivate from '../../api/hooks/useAxiosPrivate';
 import { FaCheck } from 'react-icons/fa';
+import { text } from 'motion/react-client';
 
 const variantMap = {
   hidden: { opacity: 0, scale: 1.1 },
@@ -51,13 +52,16 @@ const ContactCom = () => {
     subject: '',
     text: '',
   });
-  const [msgErr, setMsgErr] = useState('');
-  const [isSending, setIsSending] = useState(false);
+  const [msgErr, setMsgErr] = useState(null);
+  const [status, setStatus] = useState('typing');
   const ref = useRef(null);
   const refForm = useRef(null);
   const refErr = useRef(null);
   const timeoutRef = useRef(null);
   const sendingRef = useRef(null);
+
+  const sent = status === 'sent';
+  const sending = status === 'sending';
 
   const axiosPrivate = useAxiosPrivate();
 
@@ -83,16 +87,18 @@ const ContactCom = () => {
   };
 
   const handleSending = () => {
-    setIsSending(true);
     sendingRef.current?.scrollIntoView({ behavior: 'smooth' });
 
     timeoutRef.current = setTimeout(() => {
-      setIsSending(false);
+      if (sent) {
+        setStatus('typing');
+      }
     }, 3500);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setStatus('sending');
 
     try {
       await axiosPrivate.post('/contact', {
@@ -101,12 +107,14 @@ const ContactCom = () => {
         subject: message.subject,
         text: message.text,
       });
+      setMsgErr(null);
       setMessage({
         name: '',
         mail: '',
         subject: '',
         text: '',
       });
+      setStatus('sent');
       handleSending();
     } catch (err) {
       if (!err?.response) {
@@ -118,6 +126,7 @@ const ContactCom = () => {
       }
 
       refErr.current?.scrollIntoView({ behavior: 'smooth' });
+      setStatus('typing');
     }
   };
 
@@ -175,17 +184,19 @@ const ContactCom = () => {
               marked *
             </p>
           </motion.div>
-          <p ref={refErr} className={msgErr ? 'errmsg' : 'offscreen'}>
+          <p ref={refErr} className={msgErr !== null ? 'errmsg' : 'offscreen'}>
             {msgErr}
           </p>
           <div
             ref={sendingRef}
-            className={isSending ? 'isSending' : 'offScreen'}
+            className={sent ? 'isSending' : 'offScreen'}
             style={{ display: 'flex', gap: '0.5em', alignItems: 'center' }}
           >
             <p className='message-success'>Message sent</p>
             <FaCheck className='icon-valid' />
           </div>
+
+          {sending && <p>Sending...</p>}
 
           <motion.form
             className='contact-form'
@@ -202,6 +213,7 @@ const ContactCom = () => {
                 autoComplete='off'
                 id='name'
                 placeholder='Name'
+                required
                 value={message.name}
                 onChange={(e) => handleChange(e)}
               />
@@ -213,6 +225,7 @@ const ContactCom = () => {
                 autoComplete='off'
                 id='email'
                 placeholder='E-mail'
+                required
                 value={message.mail}
                 onChange={(e) => handleChange(e)}
               />
@@ -224,6 +237,7 @@ const ContactCom = () => {
                 autoComplete='off'
                 id='subject'
                 placeholder='Subject'
+                required
                 value={message.subject}
                 onChange={(e) => handleChange(e)}
               />
@@ -233,12 +247,13 @@ const ContactCom = () => {
                 name='text'
                 id='text'
                 placeholder='Message'
+                required
                 value={message.text}
                 onChange={(e) => handleChange(e)}
               ></textarea>
             </label>
             <div style={{ textAlign: 'right' }}>
-              <button>Submit</button>
+              <button disabled={sending || text.length === 0}>Submit</button>
             </div>
           </motion.form>
         </div>
