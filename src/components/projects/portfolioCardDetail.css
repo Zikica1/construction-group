@@ -109,6 +109,14 @@
   }
 }
 
+.left-arrow,
+.right-arrow {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
 .project-detail-slider button {
   color: var(--clr-text-light);
   background: var(--clr-bg-blue-400);
