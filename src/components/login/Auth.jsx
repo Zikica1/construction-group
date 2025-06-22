@@ -53,6 +53,10 @@ const Auth = () => {
     }
   };
 
+  const togglePersist = () => {
+    setPersist((prev) => !prev);
+  };
+
   useEffect(() => {
     localStorage.setItem('persist', persist);
   }, [persist]);
@@ -88,7 +92,7 @@ const Auth = () => {
               type='checkbox'
               id='persist'
               checked={persist}
-              onChange={(e) => setPersist(e.target.checked)}
+              onChange={togglePersist}
             />
             <label htmlFor='persist'>Trust This Device</label>
           </div>
