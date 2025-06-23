@@ -85,7 +85,9 @@ const PortfolioCardDetail = () => {
               transition: 'all 0.5s ease',
             }}
           >
-            <h1>{projectDetail.title}</h1>
+            <div className='project-head-wrap'>
+              <h1>{projectDetail.title}</h1>
+            </div>
             <p>{projectDetail.text}</p>
             <Button title='Launch Project' />
           </motion.div>
