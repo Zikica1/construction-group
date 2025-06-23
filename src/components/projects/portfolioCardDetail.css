@@ -76,25 +76,12 @@
   margin-block: 0.9em 0.4em;
   line-height: 1.2;
   text-transform: capitalize;
-  /* position: relative; */
   overflow-wrap: anywhere;
 
   @media (min-width: 63.75rem) {
     margin-block: 0 0.4em;
   }
 }
-
-/* .project-detail-text h1::before {
-  @media (min-width: 63.75rem) {
-    content: '';
-    position: absolute;
-    left: -100px;
-    top: 30px;
-    height: 5px;
-    width: 74px;
-    background: var(--linear-gradient-2);
-  }
-} */
 
 .project-detail-text p {
   letter-spacing: 0.23px;

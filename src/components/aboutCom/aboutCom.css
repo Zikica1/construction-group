@@ -96,12 +96,12 @@
   }
 }
 
-.company-detail h2 span::before {
-  @media (min-width: 65rem) {
+@media (min-width: 65rem) {
+  .company-detail h2 span::before {
     content: '';
     position: absolute;
     left: 0;
-    top: 0;
+    top: 10px;
     height: 5px;
     width: 40px;
     background-image: var(--linear-gradient-2);
@@ -137,8 +137,8 @@
   }
 }
 
-.company-par-2::before {
-  @media (min-width: 48rem) {
+@media (min-width: 48rem) {
+  .company-par-2::before {
     content: '';
     position: absolute;
     left: 0;
