@@ -59,8 +59,8 @@
   position: relative;
 }
 
-.project-head-wrap::before {
-  @media (min-width: 63.75rem) {
+@media (min-width: 63.75rem) {
+  .project-head-wrap::before {
     content: '';
     position: absolute;
     height: 5px;
