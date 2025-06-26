@@ -108,7 +108,7 @@
     padding-block-start: 1.6em;
     transition: none;
     visibility: unset;
-    contain-intrinsic-block-size: auto 27px;
+    contain-intrinsic-block-size: auto 1.69em;
   }
 
   @media (min-width: 63.75rem) {
