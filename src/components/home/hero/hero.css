@@ -16,6 +16,7 @@
 
 .hero-content {
   max-width: 80%;
+  min-height: 18.06em;
   overflow-y: hidden;
 
   @media (min-width: 48rem) {
