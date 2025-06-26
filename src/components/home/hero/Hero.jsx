@@ -83,7 +83,6 @@ const Hero = () => {
             <img
               src='/pictures/home/construction-worker-hero-700px.png'
               alt='img-worker'
-              fetchPriority='high'
             />
           </picture>
         </motion.div>
