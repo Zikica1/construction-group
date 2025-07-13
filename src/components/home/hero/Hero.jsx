@@ -18,11 +18,11 @@ const Hero = () => {
 
   useEffect(() => {
     const handleAnimate = () => {
-      heroAnimate(
-        '.hero-img',
-        { x: 0, opacity: 1 },
-        { type: 'tween', duration: 1 }
-      );
+      // heroAnimate(
+      //   '.hero-img',
+      //   { x: 0, opacity: 1 },
+      //   { type: 'tween', duration: 1 }
+      // );
       heroAnimate(
         '.hero-content-details',
         { y: 0 },
@@ -66,7 +66,8 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        <motion.div className='hero-img' initial={{ x: 100, opacity: 0 }}>
+        {/* initial={{ x: 100, opacity: 0 }} */}
+        <motion.div className='hero-img'>
           <picture>
             <source
               media='(max-width: 500px)'
