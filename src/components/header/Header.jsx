@@ -1,15 +1,11 @@
 import './header.css';
-import { useState, useEffect, lazy, Suspense } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import useIsMobile from '../../api/hooks/useIsMobile';
-import NavigateDesktop from './Navigate';
-const NavigateMobile = lazy(() => import('./Navigate'));
+import Navigate from './Navigate';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  // const [NavComponent, setNavComponent] = useState(null);
   const location = useLocation();
-  const isMobile = useIsMobile();
 
   const isHome = location.pathname === '/';
 
@@ -54,13 +50,7 @@ const Header = () => {
         <NavComponent isOpen={isOpen} />
       )} */}
 
-      {isMobile ? (
-        <Suspense fallback={null}>
-          {isOpen && <NavigateMobile isOpen={isOpen} />}
-        </Suspense>
-      ) : (
-        <NavigateDesktop isOpen={isOpen} />
-      )}
+      <Navigate isOpen={isOpen} />
 
       <button
         onClick={toggleMenu}

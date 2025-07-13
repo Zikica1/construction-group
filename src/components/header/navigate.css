@@ -9,6 +9,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  content-visibility: auto;
+  contain-intrinsic-block-size: auto 100vh;
+  transition: opacity 0.15s ease, visible 0.15s ease;
 
   @media (min-width: 48rem) {
     position: unset;
@@ -16,11 +21,18 @@
     height: auto;
     background: none;
     padding-block-start: 1.6em;
+    opacity: 1;
+    visibility: visible;
   }
 
   @media (min-width: 63.75rem) {
     padding-block-start: 0;
   }
+}
+
+.show {
+  opacity: 1;
+  visibility: visible;
 }
 
 .nav-list {
