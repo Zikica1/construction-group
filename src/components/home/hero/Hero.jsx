@@ -67,7 +67,7 @@ const Hero = () => {
         </div>
 
         {/* initial={{ x: 100, opacity: 0 }} */}
-        <motion.div className='hero-img'>
+        <div className='hero-img'>
           <picture>
             <source
               media='(max-width: 500px)'
@@ -89,7 +89,7 @@ const Hero = () => {
               fetchPriority='high'
             />
           </picture>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
